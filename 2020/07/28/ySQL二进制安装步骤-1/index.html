@@ -1,285 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
 
 
 
+  
 
 
+<html class="theme-next muse use-motion" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  <title>MySQL二进制安装步骤 - Hexo</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="MySQL 二进制安装步骤设置主机名和IP1hostnamectl set-hostname db01  清理历史环境123[root@db01 ~]# rpm -qa |grep mariadb[root@db01 ~]# yum remove mariadb-libs  创建用户和组1234[root@db01 ~]# useradd mysql -s &#x2F;sbin&#x2F;nologin[root@d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL二进制安装步骤">
+<meta property="og:url" content="http://yoursite.com/2020/07/28/ySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL 二进制安装步骤设置主机名和IP1hostnamectl set-hostname db01  清理历史环境123[root@db01 ~]# rpm -qa |grep mariadb[root@db01 ~]# yum remove mariadb-libs  创建用户和组1234[root@db01 ~]# useradd mysql -s &#x2F;sbin&#x2F;nologin[root@d">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-28T11:48:38.000Z">
+<meta property="article:modified_time" content="2020-07-28T11:48:52.787Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/28/ySQL二进制安装步骤-1/"/>
+
+
+
+
+
+  <title>MySQL二进制安装步骤 | Hexo</title>
   
 
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
 
 
-  <script  src="/js/utils.js" ></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+  
+  
+    
+  
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                Home
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                Archives
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                Categories
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                Tags
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                About
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              
-  <div class="mt-3 post-meta">
-    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-28 19:48">
-      July 28, 2020 pm
-    </time>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
 
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      637 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      10
-       分钟
-    </span>
-  
-
-  
-  
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
             
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
       
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
-            <article class="markdown-body">
-              <h1 id="MySQL-二进制安装步骤"><a href="#MySQL-二进制安装步骤" class="headerlink" title="MySQL 二进制安装步骤"></a>MySQL 二进制安装步骤</h1><h3 id="设置主机名和IP"><a href="#设置主机名和IP" class="headerlink" title="设置主机名和IP"></a>设置主机名和IP</h3><pre><code class="hljs shell">hostnamectl set-hostname db01</code></pre>
 
-<h3 id="清理历史环境"><a href="#清理历史环境" class="headerlink" title="清理历史环境"></a>清理历史环境</h3><pre><code class="hljs shell">[root@db01 ~]# rpm -qa |grep mariadb
+  <div id="posts" class="posts-expand">
+    
 
-[root@db01 ~]# yum remove mariadb-libs</code></pre>
+  
 
-<h3 id="创建用户和组"><a href="#创建用户和组" class="headerlink" title="创建用户和组"></a>创建用户和组</h3><pre><code class="hljs shell">[root@db01 ~]# useradd mysql -s /sbin/nologin
-[root@db01 ~]# id mysql
-uid=1001(mysql) gid=1001(mysql) 组=1001(mysql)
-[root@db01 ~]#</code></pre>
+  
+  
+  
 
-<h3 id="创建相关目录"><a href="#创建相关目录" class="headerlink" title="创建相关目录"></a>创建相关目录</h3><pre><code class="hljs shell">软件目录: mkdir -p /app/database/    
-数据目录: mkdir -p /data/3306/
-日志目录：mkdir -p /binlog/3306</code></pre>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/ySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-1/">
 
-<h3 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h3><pre><code class="hljs shell">[root@db01 /]# chown  -R mysql.mysql /app/ /data/ /binlog/</code></pre>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
-<h3 id="上传并解压、设置软连接"><a href="#上传并解压、设置软连接" class="headerlink" title="上传并解压、设置软连接"></a>上传并解压、设置软连接</h3><pre><code class="hljs shell">[root@db01 database]# tar xf mysql-5.7.28-linux-glibc2.12-x86_64.tar.gz 
-[root@db01 database]# ln -s mysql-5.7.28-linux-glibc2.12-x86_64 mysql</code></pre>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
 
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><pre><code class="hljs shell">[root@db01 database]# vim /etc/profile</code></pre>
+    
+      <header class="post-header">
 
-<h3 id="添加一行"><a href="#添加一行" class="headerlink" title="添加一行"></a>添加一行</h3><pre><code class="hljs shell">export PATH=/app/database/mysql/bin:$PATH</code></pre>
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL二进制安装步骤</h1>
+        
 
-<h3 id="生效配置"><a href="#生效配置" class="headerlink" title="生效配置"></a>生效配置</h3><pre><code class="hljs shell">source /etc/profile</code></pre>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-28T19:48:38+08:00">
+                2020-07-28
+              </time>
+            
 
-<h3 id="初始化系统库表"><a href="#初始化系统库表" class="headerlink" title="初始化系统库表"></a>初始化系统库表</h3><pre><code class="hljs shell">[root@db01 ~]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/</code></pre>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MySQL-二进制安装步骤"><a href="#MySQL-二进制安装步骤" class="headerlink" title="MySQL 二进制安装步骤"></a>MySQL 二进制安装步骤</h1><h3 id="设置主机名和IP"><a href="#设置主机名和IP" class="headerlink" title="设置主机名和IP"></a>设置主机名和IP</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname db01</span><br></pre></td></tr></table></figure>
+
+<h3 id="清理历史环境"><a href="#清理历史环境" class="headerlink" title="清理历史环境"></a>清理历史环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 ~]# rpm -qa |grep mariadb</span><br><span class="line"></span><br><span class="line">[root@db01 ~]# yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建用户和组"><a href="#创建用户和组" class="headerlink" title="创建用户和组"></a>创建用户和组</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 ~]# useradd mysql -s /sbin/nologin</span><br><span class="line">[root@db01 ~]# id mysql</span><br><span class="line">uid=1001(mysql) gid=1001(mysql) 组=1001(mysql)</span><br><span class="line">[root@db01 ~]#</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建相关目录"><a href="#创建相关目录" class="headerlink" title="创建相关目录"></a>创建相关目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">软件目录: mkdir -p /app/database/    </span><br><span class="line">数据目录: mkdir -p /data/3306/</span><br><span class="line">日志目录：mkdir -p /binlog/3306</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 /]# chown  -R mysql.mysql /app/ /data/ /binlog/</span><br></pre></td></tr></table></figure>
+
+<h3 id="上传并解压、设置软连接"><a href="#上传并解压、设置软连接" class="headerlink" title="上传并解压、设置软连接"></a>上传并解压、设置软连接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 database]# tar xf mysql-5.7.28-linux-glibc2.12-x86_64.tar.gz </span><br><span class="line">[root@db01 database]# ln -s mysql-5.7.28-linux-glibc2.12-x86_64 mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 database]# vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加一行"><a href="#添加一行" class="headerlink" title="添加一行"></a>添加一行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/app/database/mysql/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<h3 id="生效配置"><a href="#生效配置" class="headerlink" title="生效配置"></a>生效配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始化系统库表"><a href="#初始化系统库表" class="headerlink" title="初始化系统库表"></a>初始化系统库表</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 ~]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/</span><br></pre></td></tr></table></figure>
 
 <p>#报错</p>
-<pre><code class="hljs shell">[root@db01 app]# yum install -y libaio-devel</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 app]# yum install -y libaio-devel</span><br></pre></td></tr></table></figure>
 
 <p>#成功标志</p>
-<pre><code class="hljs shell">===================初始化过程==============================
-[root@db01 ~]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/
-2020-07-28T07:37:10.383182Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
-2020-07-28T07:37:10.517400Z 0 [Warning] InnoDB: New log files created, LSN=45790
-2020-07-28T07:37:10.539858Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
-2020-07-28T07:37:10.597435Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 25867e9c-d0a5-11ea-bae9-000c2918bdc2.
-2020-07-28T07:37:10.605086Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
-2020-07-28T07:37:11.083297Z 0 [Warning] CA certificate ca.pem is self signed.
-
-2020-07-28T07:37:11.206699Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">===================初始化过程==============================</span><br><span class="line">[root@db01 ~]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/</span><br><span class="line">2020-07-28T07:37:10.383182Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span><br><span class="line">2020-07-28T07:37:10.517400Z 0 [Warning] InnoDB: New log files created, LSN=45790</span><br><span class="line">2020-07-28T07:37:10.539858Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.</span><br><span class="line">2020-07-28T07:37:10.597435Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 25867e9c-d0a5-11ea-bae9-000c2918bdc2.</span><br><span class="line">2020-07-28T07:37:10.605086Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.</span><br><span class="line">2020-07-28T07:37:11.083297Z 0 [Warning] CA certificate ca.pem is self signed.</span><br><span class="line"></span><br><span class="line">2020-07-28T07:37:11.206699Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.</span><br></pre></td></tr></table></figure>
 
 <p>#容易报错</p>
-<pre><code class="hljs shell">=====================再次初始化============================
-[root@db01 app]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/
-2020-07-28T07:44:12.518073Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
-2020-07-28T07:44:12.527858Z 0 [ERROR] --initialize specified but the data directory has files in it. Aborting.
-2020-07-28T07:44:12.527957Z 0 [ERROR] Aborting</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">=====================再次初始化============================</span><br><span class="line">[root@db01 app]# mysqld --initialize-insecure --user=mysql --basedir=/app/database/mysql --datadir=/data/3306/</span><br><span class="line">2020-07-28T07:44:12.518073Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span><br><span class="line">2020-07-28T07:44:12.527858Z 0 [ERROR] --initialize specified but the data directory has files in it. Aborting.</span><br><span class="line">2020-07-28T07:44:12.527957Z 0 [ERROR] Aborting</span><br></pre></td></tr></table></figure>
 
-<pre><code class="hljs shell">[root@db01 app]# rm -rf /data/3306/*   删除数据目录后再次进行初始化</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 app]# rm -rf /data/3306/*   删除数据目录后再次进行初始化</span><br></pre></td></tr></table></figure>
 
 <p>（1）mysqld –initialize<br>    1.会产生12位临时密码，必须重置后才能使用<br>    2.密码管理使用严格模式：3种密码复杂度</p>
 <p>（2）mysqld –initialize-insecure<br>    空密码，根据实际情况设置密码复杂度</p>
-<h3 id="设置配置文件"><a href="#设置配置文件" class="headerlink" title="设置配置文件"></a>设置配置文件</h3><pre><code class="hljs shell">cat &gt; /etc/my.cnf &lt;&lt;EOF
-[mysqld]
-user=mysql
-basedir=/app/database/mysql
-datadir=/data/3306
-server_id=6
-port=3306
-socket=/temp/mysql.sock
-[mysql]
-socket=/temp/mysql.sock
-EOF
+<h3 id="设置配置文件"><a href="#设置配置文件" class="headerlink" title="设置配置文件"></a>设置配置文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/my.cnf &lt;&lt;EOF</span><br><span class="line">[mysqld]</span><br><span class="line">user=mysql</span><br><span class="line">basedir=/app/database/mysql</span><br><span class="line">datadir=/data/3306</span><br><span class="line">server_id=6</span><br><span class="line">port=3306</span><br><span class="line">socket=/temp/mysql.sock</span><br><span class="line">[mysql]</span><br><span class="line">socket=/temp/mysql.sock</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">[root@db01 app]# cat /etc/my.cnf</span><br></pre></td></tr></table></figure>
 
-[root@db01 app]# cat /etc/my.cnf</code></pre>
+<h3 id="准备启动脚本，方便调用"><a href="#准备启动脚本，方便调用" class="headerlink" title="准备启动脚本，方便调用"></a>准备启动脚本，方便调用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 support-files]# cd /app/database/mysql/support-files</span><br><span class="line"></span><br><span class="line">[root@db01 support-files]# cp mysql.server /etc/init.d/mysqld</span><br></pre></td></tr></table></figure>
 
-<h3 id="准备启动脚本，方便调用"><a href="#准备启动脚本，方便调用" class="headerlink" title="准备启动脚本，方便调用"></a>准备启动脚本，方便调用</h3><pre><code class="hljs shell">[root@db01 support-files]# cd /app/database/mysql/support-files
-
-[root@db01 support-files]# cp mysql.server /etc/init.d/mysqld</code></pre>
-
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre><code class="hljs shell">[root@db01 /]# service mysqld 
-force-reload  reload        restart       start         status        stop  
-
-[root@db01 tmp]# mysql</code></pre>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@db01 /]# service mysqld </span><br><span class="line">force-reload  reload        restart       start         status        stop  </span><br><span class="line"></span><br><span class="line">[root@db01 tmp]# mysql</span><br></pre></td></tr></table></figure>
 
 
 
@@ -310,222 +367,234 @@ force-reload  reload        restart       start         status        stop
 
 
 
-            </article>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/07/24/happy/">
-                        <span class="hidden-mobile">happy</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
-              
-            </div>
+      
+    </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/24/happy/" rel="next" title="happy">
+                <i class="fa fa-chevron-left"></i> happy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
           </div>
         </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
-<script  src="/js/main.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/js/lazyload.js" ></script>
-  
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-
-
-
-
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: 'article.markdown-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "MySQL二进制安装步骤&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
       
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
 
 
 
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
-      }
-    );
-  </script>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-二进制安装步骤"><span class="nav-number">1.</span> <span class="nav-text">MySQL 二进制安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主机名和IP"><span class="nav-number">1.0.1.</span> <span class="nav-text">设置主机名和IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理历史环境"><span class="nav-number">1.0.2.</span> <span class="nav-text">清理历史环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户和组"><span class="nav-number">1.0.3.</span> <span class="nav-text">创建用户和组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建相关目录"><span class="nav-number">1.0.4.</span> <span class="nav-text">创建相关目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置权限"><span class="nav-number">1.0.5.</span> <span class="nav-text">设置权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传并解压、设置软连接"><span class="nav-number">1.0.6.</span> <span class="nav-text">上传并解压、设置软连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.0.7.</span> <span class="nav-text">设置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加一行"><span class="nav-number">1.0.8.</span> <span class="nav-text">添加一行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生效配置"><span class="nav-number">1.0.9.</span> <span class="nav-text">生效配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化系统库表"><span class="nav-number">1.0.10.</span> <span class="nav-text">初始化系统库表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置配置文件"><span class="nav-number">1.0.11.</span> <span class="nav-text">设置配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备启动脚本，方便调用"><span class="nav-number">1.0.12.</span> <span class="nav-text">准备启动脚本，方便调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务"><span class="nav-number">1.0.13.</span> <span class="nav-text">启动服务</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -538,6 +607,83 @@ force-reload  reload        restart       start         status        stop
 
 
 
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
 
 
 
@@ -545,6 +691,31 @@ force-reload  reload        restart       start         status        stop
 
 
 
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
